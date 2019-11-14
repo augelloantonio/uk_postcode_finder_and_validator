@@ -2,6 +2,22 @@ import postcodes_io_api
 
 api = postcodes_io_api.Api(debug_http=False, timeout=None, base_url=None)
 
+def menu():
+
+    choice = input("""
+                    Postcode finder
+                      1: Find a Postcode
+                      2: Find nearest postcodes
+                      3: exit
+
+                      Please enter your choice: """)
+    if choice == '1':
+        ask_for_postcode()
+    if choice == '2':
+        get_nearest_postcode()
+    if choice == '3':
+        exit()
+
 
 def ask_for_postcode():
     postcode = input("Enter a valid postcode: ")
@@ -42,7 +58,9 @@ def get_nearest_postcode():
         postcode=new_postcode)
     for postcode in postcode_data['result']:
         postcodes.append(postcode['postcode'])
-    return postcodes
+    return print(postcodes)
 
+def exit():
+    return None
 
-ask_for_postcode()
+menu()
