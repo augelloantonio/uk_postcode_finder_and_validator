@@ -1,7 +1,34 @@
 from postcode.postcode import *
 
-postcode_address = get_data_postcode('CW9 6GN')
-postcode_valid = postcode_is_valid('CW9 6GN')
-postcode_nearest = get_nearest_postcode('CW9 6GN')
+from postcode.postcode import *
 
-print(postcode_valid)
+def menu():
+    '''
+    Get a choice menu
+    '''
+    choice = input("""
+                    Postcode finder
+                      1: Find a Postcode
+                      2: Find nearest postcodes
+                      3: exit
+
+                      Please enter your choice: """)
+    if choice == '1':
+        ask_for_postcode()
+    if choice == '2':
+        get_nearest_postcode()
+    if choice == '3':
+        exit()
+
+
+def ask_for_postcode():
+    postcode = input("Enter a valid postcode: ")
+    get_a_postcode(postcode)
+
+def exit():
+    '''
+    Simple exit function to exit te program
+    '''
+    return None
+
+menu()

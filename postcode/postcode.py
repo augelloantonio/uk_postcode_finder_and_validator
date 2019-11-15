@@ -6,30 +6,6 @@ import re
 api = postcodes_io_api.Api(debug_http=False, timeout=None, base_url=None)
 
 
-def menu():
-    '''
-    Get a choice menu
-    '''
-    choice = input("""
-                    Postcode finder
-                      1: Find a Postcode
-                      2: Find nearest postcodes
-                      3: exit
-
-                      Please enter your choice: """)
-    if choice == '1':
-        ask_for_postcode()
-    if choice == '2':
-        get_nearest_postcode()
-    if choice == '3':
-        exit()
-
-
-def ask_for_postcode():
-    postcode = input("Enter a valid postcode: ")
-    get_a_postcode(postcode)
-
-
 def get_a_postcode(postcode):
     '''
     check if the postcode exist, if it does not exist it will
@@ -40,7 +16,7 @@ def get_a_postcode(postcode):
 
     if postcode_is_valid(postcode):
         data = get_data_postcode(postcode)
-        return data
+        return data, print(data)
     else:
         print('Invalid postcode')
 
@@ -51,8 +27,7 @@ def get_data_postcode(postcode):
     the given postcode eexist and prevent having postcode that does not exist passing true
     '''
     postcode_data = api.get_postcode(postcode)
-    data = get_address(postcode_data)
-    return data
+    return postcode_data
 
 
 
@@ -76,16 +51,16 @@ def postcode_is_valid(postcode):
         return False
 
     return True
+    
 
-
-
-def get_address(postcode_data):
+def get_address(postcode):
     '''
     Get a simple address from postcode
     N.B. For better results can be integrated a geo-location api
     to locate for coordinates
     '''
-    
+    postcode_data = get_data_postcode(postcode)
+
     result = postcode_data['result']
     country = result['country']
     region = result['nhs_ha']
@@ -96,22 +71,14 @@ def get_address(postcode_data):
     return print('The address is: ', address)
 
 
-def get_nearest_postcode(postcode):
+def get_nearest_postcode():
     '''
     Get nearest postcodes
     '''
     postcodes = []
+    postcode_input = input("Enter a valid postcode: ")
     postcode_data = api.get_nearest_postcodes_for_postcode(
-        postcode=postcode)
+        postcode=postcode_input)
     for postcode in postcode_data['result']:
         postcodes.append(postcode['postcode'])
-    return print('The nearest postcode are: ', postcodes)
-
-
-def exit():
-    '''
-    Simple exit function to exit te program
-    '''
-    return None
-
-# menu()
+    return True, print('The nearest postcode are: ', postcodes)
