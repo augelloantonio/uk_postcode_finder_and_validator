@@ -30,6 +30,24 @@ def get_data_postcode(postcode):
     return postcode_data
 
 
+def format_code(postcode):
+    '''
+    Format the postcode if is not formatted
+    or if there is a typo error
+    '''
+    # Minimum size is 5 letters
+    # Maximum size is 8 letters
+    if len(postcode) < 5 or len(postcode) > 9:
+        print('Invalid Postcode')
+    postcode = postcode.upper()
+    # Get the outward code
+    outward_code = postcode[:-3].strip()
+    # Get the inward code
+    inward_code = postcode[-3:].strip()
+
+    postcode = outward_code + ' ' + inward_code
+    return postcode
+
 
 def postcode_is_valid(postcode):
     """
@@ -39,8 +57,8 @@ def postcode_is_valid(postcode):
         and following the related question on stackoverflow - 
         https://stackoverflow.com/questions/378157/python-regular-expression-postcode-search
     """
+    postcode = format_code(postcode)
 
-    
     inward_code = postcode.split(" ")[1]
     outward_code = postcode.split(" ")[0]
 
@@ -51,7 +69,7 @@ def postcode_is_valid(postcode):
         return False
 
     return True
-    
+
 
 def get_address(postcode):
     '''
