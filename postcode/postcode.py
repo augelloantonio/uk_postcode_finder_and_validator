@@ -81,6 +81,7 @@ def get_nearest_postcode(postcode):
     postcodes = []
     postcode_data = api.get_nearest_postcodes_for_postcode(
         postcode=postcode)
+    
     for postcode in postcode_data['result']:
         postcodes.append(postcode['postcode'])
     return True, postcodes
