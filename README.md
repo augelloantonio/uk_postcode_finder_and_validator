@@ -1,10 +1,10 @@
 # Uk Postcode finder and validator
 
-Simple package to find, validate and format UK postcodes buld with python.
+A simple package to find, validate and format UK postcodes build with python.
 
 This library use [Postcodes.io](https://postcodes.io/) API to find data regarding postcodes.
 
-## Requirenents
+## Requirements
 
 - Pip 3
 - Python 3.6
@@ -61,7 +61,7 @@ $ python3 app.py
 $ from postcode.postcode import *
 ```
 
-If you want to import only a specified function you can replace '*' with the name of the funciton.
+If you want to import only a specified function you can replace '*' with the name of the function.
 
 The main functions are:
 
@@ -71,11 +71,11 @@ The main functions are:
 
 3. ```format_code(postcode)``` - To format a given Postcode in lowercase or without the spacing
 
-4. ```get_nearest_postcode(postcode)``` - To get nearestes Postcodes
+4. ```get_nearest_postcode(postcode)``` - To get nearest Postcodes
 
 ## Testing
 
-To get random postcodes I used -  https://www.doogal.co.uk/PostcodeGenerator.php
+To get random postcodes I used - https://www.doogal.co.uk/PostcodeGenerator.php
 
 Tu run the test file:
 
