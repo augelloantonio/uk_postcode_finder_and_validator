@@ -42,19 +42,6 @@ $ cd
 
 ## How to use
 
-The app.py file present in the library main directory is an example app of how this library works.
-If you want to test the library with this example app run in your terminal the command: 
-
-1. Move into the library directory
-```
-$ cd uk_postcode_finder_and_validator
-```
-
-2. Run the App
-```
-$ python3 app.py
-```
-
 1. In your python file import the library:
 
 ```
@@ -90,3 +77,15 @@ $ python3 test.py
 ```
 
 You can as well test the app by running the app.py test app I created for testing and as example of how this library could be used.
+
+If you want to test the library with this example app run in your terminal the command: 
+
+1. Move into the library directory
+```
+$ cd uk_postcode_finder_and_validator
+```
+
+2. Run the App
+```
+$ python3 app.py
+```
