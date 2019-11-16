@@ -16,19 +16,29 @@ This library use [Postcodes.io](https://postcodes.io/) API to find data regardin
 
 1. Clone this repository
 
-```$ git clone https://github.com/gello94/uk_postcode_finder_and_validator```
+```
+$ git clone https://github.com/gello94/uk_postcode_finder_and_validator
+```
 
 2. Move into the library directory
-```$ cd uk_postcode_finder_and_validator```
+```
+$ cd uk_postcode_finder_and_validator
+```
 
 3. Install requirements.txt
-```$ pip install -r ./requirements.txt```
+```
+$ pip install -r ./requirements.txt
+```
 
 4. Install library
-```pip install -e .```
+```
+$ pip install -e .
+```
 
-4. GO back into the main directory
-```$ cd ```
+4. Go back into the main directory
+```
+$ cd 
+```
 
 ## How to use
 
@@ -36,14 +46,20 @@ The app.py file present in the library main directory is an example app of how t
 If you want to test the library with this example app run in your terminal the command: 
 
 1. Move into the library directory
-```$ cd uk_postcode_finder_and_validator```
+```
+$ cd uk_postcode_finder_and_validator
+```
 
 2. Run the App
-```python3 app.py```
+```
+$ python3 app.py
+```
 
 1. In your python file import the library:
 
-```$ from postcode.postcode import *```
+```
+$ from postcode.postcode import *
+```
 
 If you want to import only a specified function you can replace '*' with the name of the funciton.
 
@@ -64,9 +80,13 @@ To get random postcodes I used -  https://www.doogal.co.uk/PostcodeGenerator.php
 Tu run the test file:
 
 1. Move into the library directory
-```$ cd uk_postcode_finder_and_validator```
+```
+$ cd uk_postcode_finder_and_validator
+```
 
 2. Run Test.py
-```python3 test.py```
+```
+$ python3 test.py
+```
 
 You can as well test the app by running the app.py test app I created for testing and as example of how this library could be used.
