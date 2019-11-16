@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='postcodeukfinderandformatter',
     version='0.1',
-    packages=['postcodes_io_api'],
+    packages=['postcode'],
     url='https://github.com/gello94/uk_postcode_finder_and_validator',
     license='MIT',
     author='Antonio Augello',
