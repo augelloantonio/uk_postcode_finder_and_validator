@@ -18,7 +18,7 @@ def get_a_postcode(postcode):
         data = get_data_postcode(postcode)
         return data, print(data)
     else:
-        print('Invalid postcode')
+        return None
 
 
 def get_data_postcode(postcode):
@@ -38,7 +38,7 @@ def format_code(postcode):
     # Minimum size is 5 letters
     # Maximum size is 8 letters
     if len(postcode) < 5 or len(postcode) > 9:
-        print('Invalid Postcode')
+        return None
     postcode = postcode.upper()
     # Get the outward code
     outward_code = postcode[:-3].strip()
@@ -59,6 +59,9 @@ def postcode_is_valid(postcode):
     """
     postcode = format_code(postcode)
 
+    if postcode == None:
+        return False
+
     inward_code = postcode.split(" ")[1]
     outward_code = postcode.split(" ")[0]
 
@@ -71,32 +74,13 @@ def postcode_is_valid(postcode):
     return True
 
 
-def get_address(postcode):
-    '''
-    Get a simple address from postcode
-    N.B. For better results can be integrated a geo-location api
-    to locate for coordinates
-    '''
-    postcode_data = get_data_postcode(postcode)
-
-    result = postcode_data['result']
-    country = result['country']
-    region = result['nhs_ha']
-    town = result['primary_care_trust']
-    district = result['admin_ward']
-
-    address = country + ', ' + region + ', ' + town + ', ' + district
-    return print('The address is: ', address)
-
-
-def get_nearest_postcode():
+def get_nearest_postcode(postcode):
     '''
     Get nearest postcodes
     '''
     postcodes = []
-    postcode_input = input("Enter a valid postcode: ")
     postcode_data = api.get_nearest_postcodes_for_postcode(
-        postcode=postcode_input)
+        postcode=postcode)
     for postcode in postcode_data['result']:
         postcodes.append(postcode['postcode'])
-    return True, print('The nearest postcode are: ', postcodes)
+    return True, postcodes

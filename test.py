@@ -15,6 +15,10 @@ class TestPostcodeLibrary(unittest.TestCase):
         '''Test get nearest postcodes''' 
         self.assertTrue(get_nearest_postcode("CW9 6GN"))
 
+    def format_postcode(self):
+        '''Test get nearest postcodes''' 
+        self.assertEqual(format_code("S627NN"), 'S62 7NN')
+
 
 if __name__ == '__main__':
     unittest.main()
