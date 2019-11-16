@@ -6,9 +6,9 @@ This library use [Postcodes.io](https://postcodes.io/) API to find data regardin
 
 ## Requirenents
 
-Pip 3
-Python 3.6
-postcodes-io-api==0.0.4
+- Pip 3
+- Python 3.6
+- postcodes-io-api==0.0.4
 
 (N.B.: postcodes-io-api will be installed following the next steps)
 
