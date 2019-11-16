@@ -1,3 +1,7 @@
+'''
+Simple app that use uk_postcode_finder_and_validator library
+'''
+
 from postcode.postcode import *
 
 def menu():
@@ -26,6 +30,9 @@ def menu():
     
 
 def validate_postcode():
+    '''
+    Validate a postcode
+    '''
     postcode = input("Enter a valid postcode: ")
 
     if postcode_is_valid(postcode) == True:
@@ -35,6 +42,9 @@ def validate_postcode():
 
 
 def format_a_postcode():
+    '''
+    Format a Postcode
+    ''''
     postcode = input("Enter a valid postcode: ")
     formatted_postcode = (format_code(postcode))
     print (formatted_postcode)
@@ -43,12 +53,18 @@ def format_a_postcode():
 
 
 def get_the_postcode_data():
+    '''
+    Get a postcode data
+    '''
     postcode = input("Enter a valid postcode: ")
     get_a_postcode(postcode)
     if get_a_postcode(postcode) == None:
         print('Invalid Postcode')
 
 def get_near_postcodes():
+    '''
+    Get Nearest postcodes
+    '''
     postcode = input("Enter a valid postcode: ")
     if postcode_is_valid(postcode) == True:
         postcodes = get_nearest_postcode(postcode)
@@ -63,4 +79,5 @@ def exit():
     '''
     return None
 
+# run the program locally
 menu()
